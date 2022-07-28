@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pearl Thoughts</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Ubuntu"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css"
+    />
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <style>
+     
+      body {
+        padding: 0px;
+        margin: 0px;
+        font-family: "Ubuntu";
+        font-size: 22px;
+        
+      }
+      .main {
+        display: grid;
+        grid-template-columns: 20% 60% 20%;
+    
+      }
+      .box1 {
+        background-color: #ffffff;
+        margin: auto;
+        margin-top: 4%;
+        position:sticky;
+        top: 0; 
+        height: 0vh;  
+        
+      }
+      .box2 {
+        background-color: #f9fafa;
+        
+      }
+      .box3 {
+        background-color: #ffffff;
+        margin-top: 4%;
+        margin-left: 3%;
+        position:sticky;
+        top: 0; 
+        height: 120vh;  
+      }
+      .dashboard-button {
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-content: stretch;
+        align-items: center;
+        padding: 5%;
+      }
+      .dashboard-button:hover{
+        cursor: pointer;
+        background-color: #faf2fd;
+        border-radius: 15px;
+      } 
+      .dashboard-icon{
+        margin-right: 4px;
+        margin-top: -5px;
+      }
+     
+      .profile-icon:hover{
+        cursor: pointer;
+      }
+      .card-shadow{
+        box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+      }
+      .card-shadow:hover{
+        cursor: pointer;
+      }
+      .uppercard{
+        display: flex;
+      align-content: center;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+      align-items: center;
+      }
+      .middlecard{
+        font-size: 1.5rem;
+        margin-left: 10%;
+      }
+      .like-comment{
+        display: flex ;
+        flex-wrap: nowrap;
+      justify-content: flex-start;
+      align-items: center;
+      }
+      .like-comment:hover{
+        cursor: pointer;
+      }
+      .container{
+        box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
+      }
+      @media screen and (max-width: 666px) {
+        body{
+          overflow-x: hidden !important ;
+        }
+        .box1{
+          position: static;
+        }
+        .main {
+        display: grid;
+        grid-template-columns: 20% 60% 20%;
+        grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      }
+      .card-shadow{
+        margin-top: 15%;
+      }
+      .box3{
+        margin: auto;
+        margin-top: 7%;
+      }
+      #logout{
+        margin-top: 0px !important;
+      }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <div class="box1">
+        <div>
+        <img src="pearl-thoughts-1623484476-349.png" style="width: 50%;margin-left:22%; " />
+        <h3>Pearl Thoughts</h3>
+        </div>
+        <div class="dashboard-content">
+          <div class="dashboard-button">
+            <i class="bi bi-list-ul dashboard-icon"></i>
+            <h5>Dashboard</h5>
+          </div>
+          <div class="dashboard-button">
+            <i class="bi bi-person-fill dashboard-icon"></i>
+            <h5>Profile</h5>
+          </div>
+          <div class="dashboard-button">
+            <i class="bi bi-person-lines-fill dashboard-icon"></i>
+            <h5>Members</h5>
+          </div>
+          <div class="dashboard-button">
+            <i class="bi bi-bar-chart-line-fill dashboard-icon"></i>
+            <h5>Analytics</h5>
+          </div>
+          <div class="dashboard-button">
+            <i class="bi bi-file-earmark-text-fill dashboard-icon"></i>
+            <h5>Document</h5>
+          </div>
+          <div class="dashboard-button">
+            <i class="bi bi-gear-fill dashboard-icon"></i>
+            <h5>Setting</h5>
+          </div>
+          <div class="dashboard-button" id="logout" style="margin-top:100% ;">
+            <i class="bi bi-box-arrow-right dashboard-icon"></i>
+            <h5>Logout</h5>
+          </div>
+        </div>
+      </div>
+
+      <div class="box2">
+        <div style="margin-left: 3%;">
+        <h3 style="margin-top: 4%; color: #141848;">Welcome Back, Soham!</h3>
+        <h6 >Here are your activities today</h6>
+
+          <div class="stats">
+            <div class="card-group" style="margin-right: 4%; margin-top: 5%; ">
+              <div class="card card-shadow" style="border: none; border-radius: 18px;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark-bar-graph-fill" viewBox="0 0 16 16" style="margin:auto; width:50px; height:40px; margin-top:-7%;fill: #d796ee;;" >
+                  <path d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0zM9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1zm.5 10v-6a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm-2.5.5a.5.5 0 0 1-.5-.5v-4a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5h-1zm-3 0a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5h-1z"/>
+                 </svg>
+               
+                <div class="card-body">
+                  <h5 class="card-title" style="text-align: center;">568</h5>
+                  <h5 class="card-title" style="text-align: center; font-size: 0.8rem;">New activities</h5>
+                  
+                </div>
+              </div>
+              <div class="card card-shadow" style=" margin-left:2% ; margin-right:2% ; border: none; border-radius: 18px;">
+                <svg xmlns="http://www.w3.org/2000/svg"  width="16" height="16" fill="currentColor" class="bi bi-people-fill" style="margin:auto; width:50px; height:40px; margin-top:-7%;fill:#9896ee"viewBox="0 0 16 16">
+                  <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                  <path fill-rule="evenodd" d="M5.216 14A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216z"/>
+                  <path d="M4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"/>
+                </svg>
+                <div class="card-body">
+                  <h5 class="card-title" style="text-align: center;">382</h5>
+                  <h5 class="card-title" style="text-align: center;font-size: 0.8rem;">Active members</h5>
+                  
+                </div>
+              </div>
+              <div class="card card-shadow" style="border: none; border-radius: 18px;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-plus-fill" style="margin:auto; width:50px; height:40px; margin-top:-7%;fill:#6dbcc0;" viewBox="0 0 16 16">
+                  <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                  <path fill-rule="evenodd" d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z"/>
+                </svg>
+                <div class="card-body">
+                  <h5 class="card-title" style="text-align: center;">308</h5>
+                  <h5 class="card-title" style="text-align: center;font-size: 0.8rem;">New Members</h5>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="comment-box">
+            <div class="container" style="background-color: #ffff ; margin-right: 4%;margin-top:4%; max-width: 98%; padding: 2%;">
+              <div class="uppercard" >
+                <img src="tony.jpg" style="width:80px;height:80px;border-radius: 50%;margin-right: 2%;">
+                <div> 
+                  <h5 class="card-title" style="font-size: 1.2rem;">Tony Stark</h5>
+                  <small class="text-muted" style="font-size: 0.9rem;">Last updated 1 mins ago</small>
+                </div>
+                
+              </div>
+              <div class="middlecard">
+                <p>yes steve it is almost complete i will give it to banner in 2 days for final test .</p>
+                <div class="like-comment">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16"style=" margin-right: 1%; fill: red">
+                    <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"/>
+                  </svg>
+                  <h5 class="card-title" style="font-size: 1.2rem; margin-right: 3%;">21 Like</h5>
+
+
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-dots" viewBox="0 0 16 16" style=" margin-right: 1%;">
+                    <path d="M5 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+                    <path d="m2.165 15.803.02-.004c1.83-.363 2.948-.842 3.468-1.105A9.06 9.06 0 0 0 8 15c4.418 0 8-3.134 8-7s-3.582-7-8-7-8 3.134-8 7c0 1.76.743 3.37 1.97 4.6a10.437 10.437 0 0 1-.524 2.318l-.003.011a10.722 10.722 0 0 1-.244.637c-.079.186.074.394.273.362a21.673 21.673 0 0 0 .693-.125zm.8-3.108a1 1 0 0 0-.287-.801C1.618 10.83 1 9.468 1 8c0-3.192 3.004-6 7-6s7 2.808 7 6c0 3.193-3.004 6-7 6a8.06 8.06 0 0 1-2.088-.272 1 1 0 0 0-.711.074c-.387.196-1.24.57-2.634.893a10.97 10.97 0 0 0 .398-2z"/>
+                  </svg>
+                  <h5 class="card-title" style="font-size: 1.2rem;"> Comment</h5>
+                </div>
+                <form class="d-flex" role="search" style="margin-top: 1.5%;max-width: 400px;border-radius:10px ;">
+                  <input class="form-control me-2" type="search" placeholder="Comment Here" aria-label="Comment" style="border-radius:12px">
+                  <button class="btn btn-outline-success" type="submit" style="border-radius:14px">Comment</button>
+                </form>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="comment-box">
+            <div class="container" style="background-color: #ffff ; margin-right: 4%;margin-top:4%; max-width: 98%; padding: 2%;">
+              <div class="uppercard" >
+                <img src="steve.jpg" style="width:80px;height:80px;border-radius: 50%;margin-right: 2%;">
+                <div> 
+                  <h5 class="card-title" style="font-size: 1.2rem;">Steve Rogers</h5>
+                  <small class="text-muted" style="font-size: 0.9rem;">Last updated 2 mins ago</small>
+                </div>
+                
+              </div>
+              <div class="middlecard">
+                <p>guys could you please complete it fast , deadline for the task is approaching . It is really important this task is completed before time.</p>
+                <div class="like-comment">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16"style=" margin-right: 1%; fill: red">
+                    <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"/>
+                  </svg>
+                  <h5 class="card-title" style="font-size: 1.2rem; margin-right: 3%;">32 Like</h5>
+
+
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-dots" viewBox="0 0 16 16" style=" margin-right: 1%;">
+                    <path d="M5 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+                    <path d="m2.165 15.803.02-.004c1.83-.363 2.948-.842 3.468-1.105A9.06 9.06 0 0 0 8 15c4.418 0 8-3.134 8-7s-3.582-7-8-7-8 3.134-8 7c0 1.76.743 3.37 1.97 4.6a10.437 10.437 0 0 1-.524 2.318l-.003.011a10.722 10.722 0 0 1-.244.637c-.079.186.074.394.273.362a21.673 21.673 0 0 0 .693-.125zm.8-3.108a1 1 0 0 0-.287-.801C1.618 10.83 1 9.468 1 8c0-3.192 3.004-6 7-6s7 2.808 7 6c0 3.193-3.004 6-7 6a8.06 8.06 0 0 1-2.088-.272 1 1 0 0 0-.711.074c-.387.196-1.24.57-2.634.893a10.97 10.97 0 0 0 .398-2z"/>
+                  </svg>
+                  <h5 class="card-title" style="font-size: 1.2rem;">4 Comment</h5>
+                </div>
+                <form class="d-flex" role="search" style="margin-top: 1.5%;max-width: 400px;border-radius:10px ;">
+                  <input class="form-control me-2" type="search" placeholder="Comment Here" aria-label="Comment" style="border-radius:12px">
+                  <button class="btn btn-outline-success" type="submit" style="border-radius:14px">Comment</button>
+                </form>
+              </div>
+            </div>
+          </div>
+          <div class="comment-box">
+            <div class="container" style="background-color: #ffff ; margin-right: 4%;margin-top:4%; max-width: 98%; padding: 2%;">
+              <div class="uppercard" >
+                <img src="tony.jpg" style="width:80px;height:80px;border-radius: 50%;margin-right: 2%;">
+                <div> 
+                  <h5 class="card-title" style="font-size: 1.2rem;">Tony Stark</h5>
+                  <small class="text-muted" style="font-size: 0.9rem;">Last updated 7 mins ago</small>
+                </div>
+                
+              </div>
+              <div class="middlecard">
+                <p>hey there, working on a brand new project and wanted to inform you that it would be out soon. Got Your answer <b>@banner</b> ??</p>
+                <div class="like-comment">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16"style=" margin-right: 1%; fill: red">
+                    <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"/>
+                  </svg>
+                  <h5 class="card-title" style="font-size: 1.2rem; margin-right: 3%;">40 Like</h5>
+
+
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-dots" viewBox="0 0 16 16" style=" margin-right: 1%;">
+                    <path d="M5 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+                    <path d="m2.165 15.803.02-.004c1.83-.363 2.948-.842 3.468-1.105A9.06 9.06 0 0 0 8 15c4.418 0 8-3.134 8-7s-3.582-7-8-7-8 3.134-8 7c0 1.76.743 3.37 1.97 4.6a10.437 10.437 0 0 1-.524 2.318l-.003.011a10.722 10.722 0 0 1-.244.637c-.079.186.074.394.273.362a21.673 21.673 0 0 0 .693-.125zm.8-3.108a1 1 0 0 0-.287-.801C1.618 10.83 1 9.468 1 8c0-3.192 3.004-6 7-6s7 2.808 7 6c0 3.193-3.004 6-7 6a8.06 8.06 0 0 1-2.088-.272 1 1 0 0 0-.711.074c-.387.196-1.24.57-2.634.893a10.97 10.97 0 0 0 .398-2z"/>
+                  </svg>
+                  <h5 class="card-title" style="font-size: 1.2rem;">24 Comment</h5>
+                </div>
+                <form class="d-flex" role="search" style="margin-top: 1.5%;max-width: 400px;border-radius:10px ;">
+                  <input class="form-control me-2" type="search" placeholder="Comment Here" aria-label="Comment" style="border-radius:12px">
+                  <button class="btn btn-outline-success" type="submit" style="border-radius:14px">Comment</button>
+                </form>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="comment-box">
+            <div class="container" style="background-color: #ffff ; margin-right: 4%;margin-top:4%; max-width: 98%; padding: 2%;">
+              <div class="uppercard" >
+                <img src="brue.jpg" style="width:80px;height:80px;border-radius: 50%;margin-right: 2%;">
+                <div> 
+                  <h5 class="card-title" style="font-size: 1.2rem;"> Doctor Banner </h5>
+                  <small class="text-muted" style="font-size: 0.9rem;">Last updated 57 mins ago</small>
+                </div>
+                
+              </div>
+              <div class="middlecard">
+                <p>how much time would you take <b>@tony stark</b> ???</p>
+                <div class="like-comment">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16"style=" margin-right: 1%; fill: red">
+                    <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"/>
+                  </svg>
+                  <h5 class="card-title" style="font-size: 1.2rem; margin-right: 3%;">49 Like</h5>
+
+
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-dots" viewBox="0 0 16 16" style=" margin-right: 1%;">
+                    <path d="M5 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+                    <path d="m2.165 15.803.02-.004c1.83-.363 2.948-.842 3.468-1.105A9.06 9.06 0 0 0 8 15c4.418 0 8-3.134 8-7s-3.582-7-8-7-8 3.134-8 7c0 1.76.743 3.37 1.97 4.6a10.437 10.437 0 0 1-.524 2.318l-.003.011a10.722 10.722 0 0 1-.244.637c-.079.186.074.394.273.362a21.673 21.673 0 0 0 .693-.125zm.8-3.108a1 1 0 0 0-.287-.801C1.618 10.83 1 9.468 1 8c0-3.192 3.004-6 7-6s7 2.808 7 6c0 3.193-3.004 6-7 6a8.06 8.06 0 0 1-2.088-.272 1 1 0 0 0-.711.074c-.387.196-1.24.57-2.634.893a10.97 10.97 0 0 0 .398-2z"/>
+                  </svg>
+                  <h5 class="card-title" style="font-size: 1.2rem;">21 Comment</h5>
+                </div>
+                <form class="d-flex" role="search" style="margin-top: 1.5%;max-width: 400px;border-radius:10px ;">
+                  <input class="form-control me-2" type="search" placeholder="Comment Here" aria-label="Comment" style="border-radius:12px">
+                  <button class="btn btn-outline-success" type="submit" style="border-radius:14px">Comment</button>
+                </form>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+
+
+
+
+
+
+      <div class="box3">
+        <form class="d-flex" role="search" style="max-width: 80%; margin-bottom: 5%;">
+            <input class="form-control me-2" type="search" placeholder="Search"  aria-label="Search" style="border-radius: 15px;"> <i class="bi bi-search profile-icon " style="margin: 2px;margin-right: 7%;"></i>
+            <i class="bi bi-chat-dots profile-icon" style="margin: 2px;margin-right: 7%;"></i>
+            <i class="bi bi-bell profile-icon" style="margin: 2px;"></i>
+          </form>  
+          <h3 style="text-align: left;">My Profile</h3>
+
+          <div class="card" style="width: 18rem; border: none;">
+            <img src="profile 2.png" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title" style="font-size: 1.5rem;">Soham Nehra</h5>
+              <p class="card-text" style="font-size: 1rem;">Hi, I'm Soham as a Frontend Developer Web Developer.I don't know who you are but if you work on something cool , aim to reshape limits ,reach out.</p>
+           
+            </div>
+            <div style="display:flex; margin-left: 4%;margin-top: 3%;">
+            <div style="display: flex;margin-right:2% ;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark-plus-fill" viewBox="0 0 16 16"style="width: 40px; height:40px; fill: #9896ee">
+                <path d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0zM9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1zM8.5 7v1.5H10a.5.5 0 0 1 0 1H8.5V11a.5.5 0 0 1-1 0V9.5H6a.5.5 0 0 1 0-1h1.5V7a.5.5 0 0 1 1 0z"/>
+              </svg>
+              <div>
+                <h5 class="card-title" style="font-size: 0.9rem;">17</h5>
+              <h5 class="card-title" style="font-size: 0.9rem;">New Activity</h5>
+            </div>
+            </div>
+            <div style="display: flex;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark-arrow-up-fill" viewBox="0 0 16 16" style="width: 40px; height:40px;fill: #6dbcc0;">
+                <path d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0zM9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1zM6.354 9.854a.5.5 0 0 1-.708-.708l2-2a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1-.708.708L8.5 8.707V12.5a.5.5 0 0 1-1 0V8.707L6.354 9.854z"/>
+              </svg>
+              <div>
+                <h5 class="card-title" style="font-size: 0.9rem;">2.72K</h5>
+              <h5 class="card-title" style="font-size: 0.9rem;">Total Activity</h5>
+            </div>
+            </div>
+          </div>
+          <div id="piechart" style="position: relative;left:-0%"></div>
+          <script type="text/javascript">
+            // Load google charts
+            google.charts.load('current', {'packages':['corechart']});
+            google.charts.setOnLoadCallback(drawChart);
+            
+            // Draw the chart and set the chart values
+            function drawChart() {
+              var data = google.visualization.arrayToDataTable([
+              ['Task', 'Hours per Day'],
+              ['Github', 2],
+              ['Leetcode', 2],
+              ['Codeforces', 2],
+             
+            ]);
+            
+              // Optional; add a title and set the width and height of the chart
+              var options = {'title':'General Activity', 'width':290, 'height':290};
+            
+              // Display the chart inside the <div> element with id="piechart"
+              var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+              chart.draw(data, options);
+            }
+            </script>
+
+          </div>
+    </div>
+    </div>
+   
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+      crossorigin="anonymous"
+    ></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  </body>
+</html>
